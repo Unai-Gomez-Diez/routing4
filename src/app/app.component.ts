@@ -4,10 +4,8 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']  // Corrige aquí 'styleUrl' a 'styleUrls'
 })
 export class AppComponent {
   title = 'routing4';
