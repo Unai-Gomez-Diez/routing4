@@ -1,1 +1,7 @@
-<p>modificar works!</p>
+<div *ngIf="product">
+
+  <input type="text" [(ngModel)]="product.nombre" placeholder="Nombre">
+  <input type="text" [(ngModel)]="product.cantidad" placeholder="Cantidad">
+  <input type="text" [(ngModel)]="product.precio" placeholder="Precio">
+  <button type="button" (click)="modProducto(product)">Aplicar</button>
+</div>

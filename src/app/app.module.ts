@@ -7,6 +7,7 @@ import { AumentarComponent } from './aumentar/aumentar.component';
 import { ComprarComponent } from './comprar/comprar.component';
 import { HeaderComponent } from './header/header.component';
 import { ModificarComponent } from './modificar/modificar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ModificarComponent } from './modificar/modificar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

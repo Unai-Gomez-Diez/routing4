@@ -1,1 +1,4 @@
-<p>aumentar works!</p>
+<input type="text" [(ngModel)]="product.nombre" placeholder="Nombre">
+<input type="text" [(ngModel)]="product.cantidad" placeholder="Cantidad">
+<input type="text" [(ngModel)]="product.precio" placeholder="Precio">
+<button type="button" (click)="anadirProducto(product)">Aplicar</button>
