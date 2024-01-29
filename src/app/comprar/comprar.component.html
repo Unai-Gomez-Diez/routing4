@@ -1,17 +1,25 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<div class="container">
+<div class="container" *ngIf="productoList">
+  <table class="table table-hover table-borderless">
+    <thead>
+    <tr>
+      <th>Código</th>
+      <th>Árticulo</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let producto of productoList" (click)="getProducto(producto)">
+      <td>{{producto.id}}</td>
+      <td>{{producto.nombre}}</td>
+      <td>{{producto.cantidad}}</td>
+      <td>{{producto.precio}}€</td>
+      <td><button type="button" (click)="getProducto(producto)">Modificar</button></td>
 
-
-  <div class="col-md-6">
-    <h1>Movie list:</h1>
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let product of productoList">
-        {{ product.id + " " + product.nombre+" "+product.cantidad+" "+product.precio }}
-        <button type="button" (click)="getProducto(product)">Modificar</button>
-      </li>
-    </ul>
-  </div>
-
-
-
+    </tr>
+    </tbody>
+  </table>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Producto } from "../Modelos/producto";
 import { AñadirService } from "../añadir.service";
 import { Router } from '@angular/router';
+import {Productos} from "../Modelos/productoMock";
 
 @Component({
   selector: 'app-comprar',
@@ -20,4 +21,6 @@ export class ComprarComponent implements OnInit {
     this.productoService.setProduct(product)
     this.router.navigate(["/modificar"])
   }
+
+  protected readonly Productos = Productos;
 }

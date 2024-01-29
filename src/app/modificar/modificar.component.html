@@ -1,7 +1,25 @@
-<div *ngIf="product">
 
-  <input type="text" [(ngModel)]="product.nombre" placeholder="Nombre">
-  <input type="text" [(ngModel)]="product.cantidad" placeholder="Cantidad">
-  <input type="text" [(ngModel)]="product.precio" placeholder="Precio">
-  <button type="button" (click)="modProducto(product)">Aplicar</button>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container" *ngIf="product">
+  <table class="table table-hover table-borderless">
+    <thead>
+    <tr>
+      <th>Árticulo</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><input type="text" [(ngModel)]="product.nombre" placeholder="Nombre"></td>
+      <td><input type="text" [(ngModel)]="product.cantidad" placeholder="Cantidad"></td>
+      <td><input type="text" [(ngModel)]="product.precio" placeholder="Precio"></td>
+
+      <td><button type="button" (click)="modProducto(product)">Aplicar</button></td>
+
+    </tr>
+    </tbody>
+  </table>
 </div>
