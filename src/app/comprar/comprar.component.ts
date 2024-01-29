@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Producto } from "../Modelos/producto";
 import { AñadirService } from "../añadir.service";
 import { Router } from '@angular/router';
-import {Productos} from "../Modelos/productoMock";
+import { Productos } from "../Modelos/productoMock";
 
 @Component({
   selector: 'app-comprar',
@@ -20,6 +20,13 @@ export class ComprarComponent implements OnInit {
   getProducto(product: Producto) {
     this.productoService.setProduct(product)
     this.router.navigate(["/modificar"])
+  }
+
+  deleteProducto(product: Producto) {
+    this.productoService.setProduct(product)
+    this.productoService.eliminarProduct()
+    this.productoList = this.productoService.getProducts()
+    //location.reload()
   }
 
   protected readonly Productos = Productos;

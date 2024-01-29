@@ -35,4 +35,14 @@ export class AñadirService {
     }
 
   }
+  eliminarProduct() {
+    if (this.product) {
+      this.productList = this.productList.filter(product => product.id !== this.product?.id)
+    }
+    for (let i = 0; i < this.productList.length; i++) {
+
+      this.productList[i].id = i + 1
+
+    }
+  }
 }

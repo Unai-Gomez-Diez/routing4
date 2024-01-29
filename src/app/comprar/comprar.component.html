@@ -2,24 +2,25 @@
 <div class="container" *ngIf="productoList">
   <table class="table table-hover table-borderless">
     <thead>
-    <tr>
-      <th>Código</th>
-      <th>Árticulo</th>
-      <th>Cantidad</th>
-      <th>Precio</th>
-      <th></th>
-      <th></th>
-    </tr>
+      <tr>
+        <th>Código</th>
+        <th>Árticulo</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th></th>
+        <th></th>
+      </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let producto of productoList" (click)="getProducto(producto)">
-      <td>{{producto.id}}</td>
-      <td>{{producto.nombre}}</td>
-      <td>{{producto.cantidad}}</td>
-      <td>{{producto.precio}}€</td>
-      <td><button type="button" (click)="getProducto(producto)">Modificar</button></td>
+      <tr *ngFor="let producto of productoList">
+        <td>{{producto.id}}</td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.precio}}€</td>
+        <td><button type="button" (click)="getProducto(producto)">Modificar</button></td>
+        <td><button type="button" (click)="deleteProducto(producto)">Eliminar</button></td>
 
-    </tr>
+      </tr>
     </tbody>
   </table>
 </div>
