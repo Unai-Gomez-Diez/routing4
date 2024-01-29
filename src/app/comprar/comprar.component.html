@@ -17,8 +17,9 @@
         <td>{{producto.nombre}}</td>
         <td>{{producto.cantidad}}</td>
         <td>{{producto.precio}}€</td>
-        <td><button type="button" (click)="getProducto(producto)">Modificar</button></td>
+        <td><button type="button" (click)="getProducto(producto)" [routerLink]="['/modificar', indice]" [queryParams]="{accion:'1'}">Modificar</button></td>
         <td><button type="button" (click)="deleteProducto(producto)">Eliminar</button></td>
+        <td><button type="button" [routerLink]="['/modificar', indice]" [queryParams]="{accion:'2'}" >Eliminar2</button></td>
 
       </tr>
     </tbody>
