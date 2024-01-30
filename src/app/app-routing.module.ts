@@ -7,7 +7,7 @@ import { ComprarComponent } from "./comprar/comprar.component";
 const routes: Routes = [
   { path: "", component: ComprarComponent },
   { path: "añadir", component: AumentarComponent },
-  { path: "modificar", component: ModificarComponent },
+  { path: "modificar/:id", component: ModificarComponent },
   { path: "**", component: ModificarComponent },
 ];
 
