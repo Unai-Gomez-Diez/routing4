@@ -20,7 +20,7 @@ export class AñadirService {
   }
   modifiProducts() {
     for (let i = 0; i < this.productList.length; i++) {
-      if (this.productList[i].id == this.product?.id) {
+      if (this.productList[i].id == this.product?.id && this.product != null) {
         this.productList[i].nombre == this.product.nombre
         this.productList[i].cantidad == this.product.cantidad
         this.productList[i].precio == this.product.precio
@@ -43,6 +43,16 @@ export class AñadirService {
 
       this.productList[i].id = i + 1
 
+    }
+  }
+  getById(id: string){
+    for (let i = 0; i < this.productList.length; i++) {
+      if (this.productList[i].id.toString() == id) {
+         this.product?.id == this.productList[i].id
+         this.product?.nombre == this.productList[i].nombre
+         this.product?.cantidad == this.productList[i].cantidad
+         this.product?.precio == this.productList[i].precio
+      }
     }
   }
 }

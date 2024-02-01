@@ -10,15 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ModificarComponent implements OnInit {
   product: Producto | undefined
-  productId: number | undefined
-  id: string | null = null
+    id: string | null = null
   accion: string | null = null
   constructor(private productoService: AñadirService, private route: Router, private route2: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.product = this.productoService.getProduct()
+
 
     this.route2.paramMap.subscribe(params => {
       this.id = params.get('id');
@@ -30,17 +29,25 @@ export class ModificarComponent implements OnInit {
       this.accion = queryParams['accion'];
       console.log('Accion:', this.accion);
     });
-
-
+    if (this.id){
+      let parse =parseInt(this.id)+1
+      this.productoService.getById(parse.toString())
+    }
+    this.product = this.productoService.getProduct()
   }
 
   modProducto(producto: Producto) {
-
     this.productoService.setProduct(producto)
-    this.productoService.modifiProducts()
-    this.route.navigate(["/"])
+    // @ts-ignore
+    if (this.accion == 1){
 
-    this.productoService.eliminarProduct()
+      this.productoService.modifiProducts()
+    }else { // @ts-ignore
+      if(this.accion == 2){
+            this.productoService.eliminarProduct()
+      }
+    }
+    this.route.navigate(["/"])
   }
 
 }

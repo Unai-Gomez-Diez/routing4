@@ -10,7 +10,7 @@ import { Productos } from "../Modelos/productoMock";
   styleUrl: './comprar.component.css'
 })
 export class ComprarComponent implements OnInit {
-  indice: number | undefined
+  indice: string | undefined
   productoList: Producto[] = []
   product: Producto | undefined
   constructor(private productoService: AñadirService, private router: Router) {
@@ -20,6 +20,7 @@ export class ComprarComponent implements OnInit {
   }
   getProducto(product: Producto) {
     this.productoService.setProduct(product)
+    this.indice = this.router.routerState.snapshot.toString()
     //this.router.navigate(["/modificar"])
   }
 
