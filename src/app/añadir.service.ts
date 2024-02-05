@@ -47,11 +47,14 @@ export class AñadirService {
   }
   getById(id: string){
     for (let i = 0; i < this.productList.length; i++) {
-      if (this.productList[i].id.toString() == id) {
-         this.product?.id == this.productList[i].id
-         this.product?.nombre == this.productList[i].nombre
-         this.product?.cantidad == this.productList[i].cantidad
-         this.product?.precio == this.productList[i].precio
+      if (this.productList[i].id.toString() === id) {
+        if(this.product){
+          this.product.id = this.productList[i].id;
+          this.product.nombre = this.productList[i].nombre;
+          this.product.cantidad = this.productList[i].cantidad;
+          this.product.precio = this.productList[i].precio;
+        }
+
       }
     }
   }
